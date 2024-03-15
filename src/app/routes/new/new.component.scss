@@ -1,0 +1,27 @@
+:host {
+  > :nth-child(n+1) {
+    flex: 0 0 50%;
+  }
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+a {
+  margin-bottom: auto;
+}
+
+.loader {
+  min-height: 12rem;
+  border: 1px dashed;
+  padding: 1rem;
+
+  &.drag-over {
+    background-color: lightgrey;
+  }
+}
+
+app-certificate-view {
+  margin-bottom: 1rem;
+}

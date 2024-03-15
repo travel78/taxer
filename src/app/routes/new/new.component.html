@@ -1,0 +1,21 @@
+<div class="flex justify-center">
+  <a role="button" routerLink="../">Назад</a>
+</div>
+<div>
+  @if (certificate(); as cer) {
+    <app-certificate-view [certificate]="cer"></app-certificate-view>
+    <button (click)="onSaveCertificate(cer)">Зберегти сертифікат</button>
+  } @else () {
+    <div class="loader flex flex-column align-center justify-center"
+         (drop)="onDrop($event)"
+         (dragenter)="showOver($event, true)"
+         (dragover)="showOver($event, true)"
+         (dragleave)="showOver($event, false)"
+         [class.drag-over]="dragOver()" >
+      <p>Перетягніть файл сертифікату сюди</p>
+      <p>або</p>
+      <button (click)="input.click()">Виберіть через стандартний діалог</button>
+      <input #input accept=".cer" style="display: none" type="file" (change)="onSelectFile(input)">
+    </div>
+  }
+</div>

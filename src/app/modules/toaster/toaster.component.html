@@ -1,0 +1,5 @@
+@if(toasts$ | async; as toast){
+  <div [class]="toast.type === toastType.Success? 'success': 'error'">
+    {{toast.message}}
+  </div>
+}

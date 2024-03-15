@@ -1,0 +1,26 @@
+<div class="flex flex-column gap">
+  <div class="flex justify-around">
+    @if(certificates()){
+      <button (click)="triggerDelete.next()">Очистити список</button>
+      <ng-template *ngIf="deleteSer | async"></ng-template>
+    }
+    <a role="button" routerLink="new">Додати</a>
+  </div>
+  <ul class="width-full flex flex-column gap">
+    @for (cer of certificates(); track cer) {
+      <li (click)="selectedCertificate.set(cer)">
+        {{ cer.subjectName }}
+      </li>
+    } @empty {
+      <div>Нема жодного сертифікату</div>
+    }
+  </ul>
+</div>
+
+<div>
+  @if (selectedCertificate(); as cer) {
+    <app-certificate-view [certificate]="cer"></app-certificate-view>
+  } @else {
+    <span>Жоден сертифікат не вибраний</span>
+  }
+</div>

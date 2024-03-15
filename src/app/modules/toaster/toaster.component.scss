@@ -1,0 +1,20 @@
+:host {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+div {
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  &.success {
+    background-color: green;
+  }
+
+  &.error {
+    background-color: red;
+  }
+}

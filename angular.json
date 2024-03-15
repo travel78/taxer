@@ -55,7 +55,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/asn1.js"
+            ]
           },
           "configurations": {
             "production": {

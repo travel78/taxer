@@ -1,0 +1,17 @@
+<p>
+  <span>Common Name</span>
+  {{ certificate.subjectName }}
+</p>
+<p>
+  <span>Issuer CN</span>
+  {{ certificate.issuerName }}
+</p>
+<p>
+  <span>Valid From</span>
+  {{ certificate.validFrom |  date:'yyyy-M-d' }}
+</p>
+<p>
+  <span>Valid To</span>
+  {{ certificate.validTo | date:'yyyy-M-d' }}
+</p>
+
